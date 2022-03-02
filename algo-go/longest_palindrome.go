@@ -2,7 +2,7 @@ package leetcode
 
 // LongestPalindrome 暴力破解
 func LongestPalindrome(s string) string {
-	if len(s) < 2 {
+	if len(s) < 2 || len(s) > 1000 {
 		return s
 	}
 

@@ -22,6 +22,10 @@ func TestLongestPalindrome(t *testing.T) {
 			"ac",
 			"a",
 		},
+		{
+			"cbcbca",
+			"cbcbc",
+		},
 	}
 
 	for _, tt := range tests {
@@ -33,5 +37,36 @@ func TestLongestPalindrome(t *testing.T) {
 }
 
 func TestValidPalindrome(t *testing.T) {
-	// TODO
+	tests := []struct {
+		s      string
+		left   int
+		right  int
+		result bool
+	}{
+		{
+			"aaa",
+			0,
+			2,
+			true,
+		},
+		{
+			"aba",
+			0,
+			2,
+			true,
+		},
+		{
+			"bd",
+			0,
+			1,
+			false,
+		},
+	}
+
+	for _, tt := range tests {
+		r := leetcode.ValidPalindrome(tt.s, tt.left, tt.right)
+		if r != tt.result {
+			t.Fatalf("input %v, expect %v, but got %v", tt.s[tt.left:tt.right], tt.result, r)
+		}
+	}
 }
