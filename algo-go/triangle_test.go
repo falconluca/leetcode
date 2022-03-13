@@ -21,7 +21,7 @@ func TestMinimumTotal(t *testing.T) {
 	}
 
 	for _, tt := range tests {
-		r := leetcode.MinimumTotal(tt.in)
+		r := leetcode.MinimumTotal4(tt.in)
 		if r != tt.out {
 			t.Fatalf("input %v, execpt %v, but got %v\n", tt.in, tt.out, r)
 		}
